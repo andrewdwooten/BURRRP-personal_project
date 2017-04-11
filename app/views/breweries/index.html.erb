@@ -1,0 +1,34 @@
+<h1>Breweries</h1>
+<table id='brewery_list'>
+  <th>
+    <td>
+      Image
+    </td>
+    <td>
+      Name
+    </td>
+    <td>
+      Description
+    </td>
+    <td>
+      Website
+    </td>
+
+  </th>
+  <% @breweries.each do |brewery| %>
+    <tr id='brewery_instance'>
+      <td id='brewery_image'>
+        <%= brewery.image %>
+      </td>
+      <td id='brewery_name'>
+        <%= brewery.name %>
+      </td>
+      <td id='brewery_description'>
+        <%= brewery.description %>
+      </td>
+      <td id='brewery_website'>
+        <%= brewery.website %>
+      </td>
+    </tr>
+  <% end %>
+</table>
