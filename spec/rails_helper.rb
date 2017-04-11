@@ -7,6 +7,15 @@ require 'spec_helper'
 require 'rspec/rails'
 require 'capybara/rails'
 require 'capybara/rspec'
+require 'webmock/rspec'
+require 'vcr'
+
+VCR.configure do |config|
+  config.cassette_library_dir = "spec/cassettes"
+  config.hook_into :webmock
+  config.filter_sensitive_data('<API_KEY>') { ENV['API_KEY'] }
+  config.allow_http_connections_when_no_cassette = true
+end
 # Add additional requires below this line. Rails is not loaded until this point!
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
@@ -98,13 +107,4 @@ RSpec.configure do |config|
   config.filter_rails_from_backtrace!
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
-end
-
-def login(username)
-  visit login_path
-
-  fill_in "Name", with: username
-  fill_in "Password", with: "password"
-
-  click_button "Login"
 end
