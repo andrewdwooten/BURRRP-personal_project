@@ -19,6 +19,10 @@ class BreweryService
     response[:data]
   end
 
+  def get_brewery(id)
+    response = parse(connection.get("/v2/breweries#{auth}&#{location}&status=verified&ids=#{id}&#{output}"))
+    response[:data]
+  end
   private
 
   def parse(response)
