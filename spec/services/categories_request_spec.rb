@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe 'BreweryService' do
   it '#get_categories' do
-    VCR.use_cassette('brewery_services/categories') do
+    VCR.use_cassette('services/categories/get_categories') do
       db = BreweryService.new
       categories = db.get_categories
 

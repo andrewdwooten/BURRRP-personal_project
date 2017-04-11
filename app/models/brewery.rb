@@ -20,4 +20,19 @@ class Brewery < OpenStruct
                   website:      brewery[:website])
     end
   end
+
+  def get_brewery(id)
+    raw_brewery = tap.get_brewery(id)
+    location = raw_brewery[:locations].first
+    Brewery.new(id:           raw_brewery[:id],
+                name:         raw_brewery[:name],
+                description:  raw_brewery[:description],
+                image:        raw_brewery[:images][:squareMedium],
+                website:      raw_brewery[:website],
+                street:       location[:streetAddress],
+                city:         location[:locality],
+                state:        location[:region],
+                phone:        location[:phone],
+                kind:         location[:locationTypeDisplay])
+  end
 end
