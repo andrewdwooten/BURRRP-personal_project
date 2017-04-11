@@ -15,7 +15,7 @@ class BreweryService
   end
 
   def get_breweries
-    response = parse(connection.get("/v2/breweries#{auth}&#{location}&p=#{page}&#{output}"))
+    response = parse(connection.get("/v2/breweries#{auth}&#{location}&status=verified&p=#{page}&#{output}"))
       unless !response.has_key?(:data)
         response[:data].each {|brewery| breweries << brewery}
         @page += 1
