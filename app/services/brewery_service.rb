@@ -21,7 +21,12 @@ class BreweryService
 
   def get_brewery(id)
     response = parse(connection.get("/v2/breweries#{auth}&#{location}&status=verified&ids=#{id}&#{output}"))
-    response[:data]
+    brewery = response[:data].first
+  end
+
+  def get_brewery_beers(id)
+    beers = parse(connection.get("/v2/brewery/#{id}/beers#{auth}&#{output}"))
+    beers[:data]
   end
   private
 

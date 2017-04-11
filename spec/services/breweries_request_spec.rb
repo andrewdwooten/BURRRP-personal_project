@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe 'brewery service' do
   it '#get_breweries returns a page of breweries' do
-    VCR.use_cassette('brewery_services/get_breweries') do
+    VCR.use_cassette('services/breweries/get_breweries') do
       db = BreweryService.new
       raw_breweries = db.get_breweries(1)
       first = raw_breweries.first
