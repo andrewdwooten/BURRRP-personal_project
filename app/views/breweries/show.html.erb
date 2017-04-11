@@ -1,0 +1,28 @@
+<h1><%= @brewery.name %></h1>
+<h6><%= @brewery.kind %></h6>
+<img src="<%= @brewery.image %>">
+
+  <ul id='brewery_information'>
+    <li id='brewery-description'>
+      <%= @brewery.description %></br>
+    </li>
+    <li id='brewery-location-contact'>
+      <%= @brewery.street %></br>
+      <%= @brewery.city %> <%= @brewery.state %>
+      <%= @brewery.phone %></br>
+      <%= @brewery.website %>
+    </li>
+  </ul>
+<% @brews.each do |brew| %>
+  <ul id='brew_instance'>
+    <li id='brew_name'>
+      <%= brew.name %>
+    </li>
+    <li id='brew_description'>
+      <%= brew.description %>
+    </li>
+    <li id='brew_organic'>
+      <%= brew.organic? %>
+    </li>
+  </ul>
+<% end %>

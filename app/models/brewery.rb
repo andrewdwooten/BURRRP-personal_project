@@ -35,5 +35,4 @@ class Brewery < OpenStruct
                 phone:        location[:phone],
                 kind:         location[:locationTypeDisplay])
   end
-
 end
