@@ -10,24 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170411165746) do
+ActiveRecord::Schema.define(version: 0) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "breweries", force: :cascade do |t|
-    t.string "bid"
-    t.string "name"
-    t.string "image_url"
-    t.string "location_name"
-    t.string "street_address"
-    t.string "city"
-    t.string "state"
-    t.string "zip"
-    t.string "phone"
-    t.string "web_site"
-    t.string "category"
-    t.string "open?"
-  end
 
 end
