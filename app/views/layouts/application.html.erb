@@ -3,12 +3,18 @@
   <head>
     <title>BURRRP</title>
     <%= csrf_meta_tags %>
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
   </head>
-
-  <body>
-    <%= yield %>
+  <body background='https://static.pexels.com/photos/172292/pexels-photo-172292.jpeg'>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+     <script type="text/javascript" src="js/materialize.min.js"></script>
+     <main>
+       <%= yield %>
+     </main>
+    <%= render "footer" %>
   </body>
 </html>
