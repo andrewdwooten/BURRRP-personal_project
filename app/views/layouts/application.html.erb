@@ -12,6 +12,12 @@
   <body background='https://static.pexels.com/photos/172292/pexels-photo-172292.jpeg'>
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
      <script type="text/javascript" src="js/materialize.min.js"></script>
+     <%= render "navbar" %>
+     <div id="flash">
+      <% flash.each do |key, value| %>
+        <div class="flash <%= key %>"><%= value %></div>
+      <% end %>
+    </div>
      <main>
        <%= yield %>
      </main>

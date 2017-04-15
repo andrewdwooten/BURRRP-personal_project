@@ -1,0 +1,12 @@
+<nav id='navbar'>
+    <div class="nav-wrapper">
+      <a href="/" class="brand-logo">BURRP</a>
+      <ul class="right hide-on-med-and-down">
+        <% if current_user.nil? %>
+          <li><a id='twitter_login_button' class="waves-effect waves-light btn" href='/auth/twitter'>Login with Twitter</a></li>
+        <% else %>
+          <li><a id='twitter_logout_button' class="waves-effect waves-light btn" href='/logout'>Logout</a></li>
+        <% end %>
+      </ul>
+    </div>
+</nav>
