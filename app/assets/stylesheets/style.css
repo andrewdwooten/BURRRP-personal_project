@@ -22,3 +22,12 @@
   #twitter_login_button{
     background-color: #740001
   }
+  #twitter_logout_button{
+    background-color: #740001
+  }
+  #flash{
+    background-color: #740001;
+    align-self: center;
+    text-emphasis: bold;
+    color: white;
+  }
