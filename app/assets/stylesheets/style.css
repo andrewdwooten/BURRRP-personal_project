@@ -31,3 +31,25 @@
     text-emphasis: bold;
     color: white;
   }
+
+  .card{
+    background-color: #740001
+  }
+  .card-image{
+    background-color: #740001;
+  }
+
+  .index_banner{
+    background-color: #740001;
+    text-align: center;
+    margin-left: 40px;
+    margin-right: 40px;
+  }
+  .card-image{
+    max-height: 100%;
+  }
+  .center-cols > .col {
+    float: none;
+    display: inline-block;
+    text-align: initial;
+  }

@@ -13,7 +13,6 @@ feature 'user visits brewery index' do
     within all('#brewery_instance').first do
       expect(page).to have_selector('#brewery_image')
       expect(page).to have_selector('#brewery_name')
-      expect(page).to have_selector('#brewery_description')
       expect(page).to have_selector('#brewery_website')
     end
     end
