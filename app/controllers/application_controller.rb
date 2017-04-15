@@ -16,6 +16,6 @@ class ApplicationController < ActionController::Base
   end
 
   def check_page?
-     params[:brewery_page].nil? || params[:brewery_page].to_i < 1
+    params[:brewery_page].nil? || params[:brewery_page].to_i < 1
   end
 end

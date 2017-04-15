@@ -17,11 +17,10 @@
           </div>
         </div>
       <% end %>
-      <a class="btn-floating btn-large waves-effect waves-light" id='next_page' href='/breweries?brewery_page=<%= (current_page - 1) %>'>
+      <a class="btn-floating btn-large waves-effect waves-light" id='previous_page' href='/breweries?brewery_page=<%= (current_page - 1) %>'>
         <i class="material-icons">skip_previous</i>
       </a>
       <a class="btn-floating btn-large waves-effect waves-light" id='next_page' href='/breweries?brewery_page=<%= (current_page + 1) %>'>
         <i class="material-icons">skip_next</i>
       </a>
-
     </div>
