@@ -22,17 +22,17 @@
     </div>
   </div>
 </div>
-
-<% @brews.each do |brew| %>
-  <ul id='brew_instance'>
-    <li id='brew_name'>
-      <%= brew.name %>
-    </li>
-    <li id='brew_description'>
-      <%= brew.description %>
-    </li>
-    <li id='brew_organic'>
-      <%= brew.organic? %>
-    </li>
-  </ul>
-<% end %>
+<div class="row center-cols center-align" id='brewery_list'>
+  <% @brews.each do |brew| %>
+    <div class="col m5">
+      <div class="card" id='brew_instance'>
+        <div class="card-content" id='brew_name'>
+          <span class="card-title"><%= brew.name %></br>Organic: <%= brew.organic? %></span>
+          <p>
+            <%= brew.description %>
+          </p>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

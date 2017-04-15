@@ -12,14 +12,16 @@ feature 'user visits a brewery show page' do
 
       within all('#brew_instance').first do
         expect(page).to have_selector('#brew_name')
-        expect(page).to have_selector('#brew_description')
-        expect(page).to have_selector('#brew_organic')
       end
 
-      within('#brewery_information') do
-        expect(page).to have_selector('#brewery-description')
-        expect(page).to have_selector('#brewery-location-contact')
+      within('#brewery-show-row') do
+        expect(page).to have_selector('#brewery_show_card')
+        expect(page).to have_selector('#brewery_description')
+        expect(page).to have_selector('#brewery_show_image')
       end
+
+      expect(page).to have_selector('#brewery-location-contact')
+
     end
   end
 end
