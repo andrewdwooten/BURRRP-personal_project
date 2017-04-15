@@ -53,3 +53,22 @@
     display: inline-block;
     text-align: initial;
   }
+  #brewery_show_card{
+    background-color: #740001;
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
+  #brewery_description{
+    align-self: right;
+    background-color: #740001;
+    height:262px;
+  }
+  #brewery_p{
+    vertical-align: center;
+  }
+  #brewery-show-row{
+    padding-bottom: 0;
+  }
+  #brewery-location-contact{
+    background-color: #740001;
+  }

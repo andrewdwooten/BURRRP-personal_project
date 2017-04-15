@@ -1,18 +1,28 @@
-<h1><%= @brewery.name %></h1>
-<h6><%= @brewery.kind %></h6>
-<img src="<%= @brewery.image %>">
+<div class='index_banner'>
+  <h1><%= @brewery.name %></h1>
+</div>
+<div class='container'>
+  <div class='row' id='brewery-show-row'>
+    <div class='col m5' id='brewery_show_card'>
+      <img src="<%= @brewery.image %>" id='brewery_show_image'>
+    </div>
+      <div class='col m7' id='brewery_description'>
+        <h4><%= @brewery.kind %></h4>
+        <p id='brewery_p'><%= @brewery.description %></p>
+      </div>
+  </div>
+  <div class='row' id='contact-row'>
+    <div class='col m5' id='brewery-location-contact'>
+      <div text-align='center'>
+        <%= @brewery.street %></br>
+        <%= @brewery.city %> <%= @brewery.state %>
+        <%= @brewery.phone %></br>
+        <a href='<%= @brewery.website %>'>Visit Brewery Website</a>
+      </div>
+    </div>
+  </div>
+</div>
 
-  <ul id='brewery_information'>
-    <li id='brewery-description'>
-      <%= @brewery.description %></br>
-    </li>
-    <li id='brewery-location-contact'>
-      <%= @brewery.street %></br>
-      <%= @brewery.city %> <%= @brewery.state %>
-      <%= @brewery.phone %></br>
-      <%= @brewery.website %>
-    </li>
-  </ul>
 <% @brews.each do |brew| %>
   <ul id='brew_instance'>
     <li id='brew_name'>
