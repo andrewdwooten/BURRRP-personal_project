@@ -4,7 +4,8 @@ class BreweriesController < ApplicationController
   before_action :set_brew, only: [:show]
 
   def index
-    if params[:brewery_page].nil?
+    if check_page?
+      params[:brewery_page] = 1
       @breweries = brewery_place.get_by_page(1)
     else
       @breweries = brewery_place.get_by_page(params[:brewery_page])
