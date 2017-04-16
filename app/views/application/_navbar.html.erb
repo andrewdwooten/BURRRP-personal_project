@@ -1,24 +1,11 @@
 <nav id='navbar'>
     <div class="nav-wrapper">
       <a href="/" class="brand-logo center">BURRP</a>
-      <% if current_user %>
-        <ul id='nav-mobile' class='left hide-on-med-and-down'>
-            <li id='search-breweries'>
-              <%= form_tag('/search', :method => "get", id: "search-form", class: "navbar-form navbar-left") do %>
-                <div class="form-group">
-                  <%= text_field_tag :search, params[:search], value: "Search Breweries by City", class: "form-control" %>
-                </div>
-            </li>
-            <li>
-              <%= submit_tag "Search", id: 'twitter_login_button',:name => nil %>
-            </li>
-            <% end %>
-        </ul>
-      <% end %>
       <ul class="right hide-on-med-and-down">
         <% if current_user.nil? %>
           <li><a id='twitter_login_button' class="waves-effect waves-light btn" href='/auth/twitter'>Login with Twitter</a></li>
         <% else %>
+          <li id='search_link'><a href="/search">Search</a></li>
           <li><a id='twitter_logout_button' class="waves-effect waves-light btn" href='/logout'>Logout</a></li>
         <% end %>
       </ul>

@@ -75,3 +75,15 @@
   #next_page{
     background-color: #eeba30;
   }
+  #submit_breweries_search{
+    background-color: #740001
+  }
+  #search_link{
+    background-color: #740001;
+  }
+  #search_jumbotron{
+    background-color: #ae0001;
+  }
+  #search_submit{
+    background-color: #eeba30;
+  }
