@@ -1,0 +1,25 @@
+var ApiKey = 'key=<%= ENV['API_KEY'] %>' ;
+var BrewerySearchParams = '&format=json&type=brewery&inPlanning=N&isPrimary=Y&locality='
+var BrewerySearchApi = "http://api.brewerydb.com/v2/locations?" + ApiKey + BrewerySearchParams;
+var test = '1234';
+
+var BrewerySearch = function(){
+  return $.ajax({
+    url: BrewerySearchApi + $('input[name=brewery_city]').val(),
+    method: 'GET'
+  })
+  .done(printAllBreweries)
+  .fail(function(error) {
+    console.error(error)
+  });
+}
+
+$(document).ready(function(){
+
+  $('button[name=brewery-search]').on('click', BrewerySearch)
+  BrewerySearch();
+
+  $('form').on('submit', function(event){
+    event.preventDefault();
+  });
+});
