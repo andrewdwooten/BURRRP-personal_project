@@ -1,31 +1,34 @@
-<div class='index_banner'>
+<div class='index_banner white-text'>
   <h1><%= @brewery.name %></h1>
 </div>
-<div class='container'>
+<div class='container white-text'>
   <div class='row' id='brewery-show-row'>
     <div class='col m5' id='brewery_show_card'>
       <img src="<%= @brewery.image %>" id='brewery_show_image'>
     </div>
-      <div class='col m7' id='brewery_description'>
+      <div class='col m7 white-text' id='brewery_description'>
         <h4><%= @brewery.kind %></h4>
         <p id='brewery_p'><%= @brewery.description %></p>
       </div>
   </div>
-  <div class='row' id='contact-row'>
-    <div class='col m5' id='brewery-location-contact'>
-      <div text-align='center'>
-        <%= @brewery.street %></br>
+  <div class='row white-text' id='contact-row'>
+    <div class='col m12' id='brewery-location-contact'>
+        <%= @brewery.street %>
         <%= @brewery.city %> <%= @brewery.state %>
-        <%= @brewery.phone %></br>
-        <a href='<%= @brewery.website %>'>Visit Brewery Website</a>
-      </div>
+        <%= @brewery.phone %>
+        <a href='<%= @brewery.website %>' class='right'>Visit Brewery Website</a>
     </div>
   </div>
 </div>
+<div class='row center-cols center-align' >
+  <div class='col m7'id='brew_banner'>
+    <h4 align='center' class='white-text'>Brews at this Brewery</h4>
+  </div>
+</div>
 <div class="row center-cols center-align" id='brewery_list'>
+  <div class="col m5">
   <% @brews.each do |brew| %>
-    <div class="col m5">
-      <div class="card" id='brew_instance'>
+      <div class="card white-text" id='brew_instance'>
         <div class="card-content" id='brew_name'>
           <span class="card-title"><%= brew.name %></br>Organic: <%= brew.organic? %></span>
           <p>
@@ -33,6 +36,6 @@
           </p>
         </div>
       </div>
+      <% end %>
     </div>
-  <% end %>
 </div>

@@ -7,8 +7,7 @@ feature 'user visits root' do
     expect(page).to have_selector('#welcome_jumbotron')
     within('#welcome_jumbotron') do
       expect(page).to have_content('Welcome to BURRP!')
-      expect(page).to have_content('Sign in with Facebook below')
-      expect(page).to have_content('Brewery Users Research and Remembering Point')
+      expect(page).to have_content('Brewery Users Research and Relaxation Point')
     end
 
     expect(page).to have_selector('#welcome_card', count: 3)

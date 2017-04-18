@@ -10,14 +10,14 @@
   }
 
   #welcome_jumbotron{
-    background-color: #ae0001;
+    background-color: #740001;
   }
   #welcome_card{
     background-color: #740001;
     font-size: 18px;
   }
   #navbar{
-    background-color: #eeba30
+    background-color: #eeba30;
   }
   #twitter_login_button{
     background-color: #740001
@@ -57,11 +57,18 @@
     background-color: #740001;
     padding-bottom: 0;
     margin-bottom: 0;
+    padding-right: 0;
+    padding-left: 0;
+    margin-right: 0;
+    margin-left: 0;
+    margin-top: 0;
+    padding-top: 0;
+    height: 256px;
   }
   #brewery_description{
     align-self: right;
     background-color: #740001;
-    height:262px;
+    height:256px;
   }
   #brewery_p{
     vertical-align: center;
@@ -89,4 +96,13 @@
   }
   #brewery_search_submit{
     background-color: #eeba30;
+  }
+  #brew_banner{
+    background-color: #eeba30
+  }
+  #breweries_link .a{
+    background-color: #740001;
+  }
+  #previous_page{
+    background-color: #740001;
   }

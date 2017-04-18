@@ -1,10 +1,10 @@
-<div class='index_banner'>
+<div class='index_banner white-text'>
   <h1>Breweries</h1>
 </div>
       <% @breweries.each do |brewery| %>
         <div class="row center-cols center-align" id='brewery_instance'>
           <div class="col m7">
-            <div class="card">
+            <div class="card white-text">
               <div class="card-image" id='brewery_image'>
                 <a href='/breweries/<%= brewery.id %>'><img src="<%= brewery.image %>"> </a>
               </div>
@@ -21,6 +21,6 @@
       <a class="btn-floating btn-large waves-effect waves-light" id='previous_page' href='/breweries?brewery_page=<%= (current_page - 1) %>'>
         <i class="material-icons">skip_previous</i>
       </a>
-      <a class="btn-floating btn-large waves-effect waves-light" id='next_page' href='/breweries?brewery_page=<%= (current_page + 1) %>'>
+      <a class="btn-floating btn-large waves-effect waves-light right" id='next_page' href='/breweries?brewery_page=<%= (current_page + 1) %>'>
         <i class="material-icons">skip_next</i>
       </a>
