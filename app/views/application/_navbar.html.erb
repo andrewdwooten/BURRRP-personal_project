@@ -3,10 +3,11 @@
       <a href="/" class="brand-logo center">BURRP</a>
       <ul class="right hide-on-med-and-down">
         <% if current_user.nil? %>
-          <li><a id='twitter_login_button' class="waves-effect waves-light btn" href='/auth/twitter'>Login with Twitter</a></li>
+          <li><a id='twitter_login_button' href='/auth/twitter'>Login with Twitter</a></li>
         <% else %>
           <li id='search_link'><a href="/search">Search</a></li>
-          <li><a id='twitter_logout_button' class="waves-effect waves-light btn" href='/logout'>Logout</a></li>
+          <li id='breweries_link' color='black'><a href='/breweries'>Breweries</a></li>
+          <li  id='twitter_logout_button'><a href='/logout'>Logout</a></li>
         <% end %>
       </ul>
     </div>
