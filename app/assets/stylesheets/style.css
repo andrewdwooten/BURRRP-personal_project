@@ -106,3 +106,6 @@
   #previous_page{
     background-color: #740001;
   }
+  html {
+    font-family: GillsSans;
+  }
