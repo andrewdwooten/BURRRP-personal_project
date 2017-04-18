@@ -2,9 +2,9 @@
   <h1>Breweries</h1>
 </div>
       <% @breweries.each do |brewery| %>
-        <div class="row center-cols center-align" id='brewery_list'>
+        <div class="row center-cols center-align" id='brewery_instance'>
           <div class="col m7">
-            <div class="card" id='brewery_instance'>
+            <div class="card">
               <div class="card-image" id='brewery_image'>
                 <a href='/breweries/<%= brewery.id %>'><img src="<%= brewery.image %>"> </a>
               </div>

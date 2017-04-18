@@ -6,9 +6,9 @@ feature 'user visits brewery index' do
       visit '/breweries'
 
       expect(page).to have_content('Breweries')
-      within('#brewery_list') do
+
         expect(page).to have_selector('#brewery_instance', count: 40)
-      end
+
 
       within all('#brewery_instance').first do
         expect(page).to have_selector('#brewery_image')
@@ -23,9 +23,9 @@ feature 'user visits brewery index' do
       visit '/breweries'
 
       expect(page).to have_content('Breweries')
-      within('#brewery_list') do
+
         expect(page).to have_selector('#brewery_instance', count: 40)
-      end
+
 
       within all('#brewery_name').first do
         expect(page).to have_content('#FREEDOM Craft Brewery')
@@ -46,9 +46,8 @@ feature 'user visits brewery index' do
 
       expect(page).to have_content('Breweries')
 
-      within('#brewery_list') do
         expect(page).to have_selector('#brewery_instance', count: 46)
-      end
+      
 
       within all('#brewery_name').first do
         expect(page).to have_content('3 Daughters Brewing')

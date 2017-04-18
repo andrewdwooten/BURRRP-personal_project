@@ -28,5 +28,12 @@ feature 'logged in user visits root' do
     end
 
     expect(current_path).to eq('/search')
+
+    fill_in "brewery_city", with: 'Denver'
+    find('#brewery_search_submit').click
+
+    using_wait_time 3 do
+      expect(page).to have_selector('#brewery_instance', count: 50)
+    end
   end
 end
