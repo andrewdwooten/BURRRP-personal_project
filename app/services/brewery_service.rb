@@ -1,5 +1,11 @@
 class BreweryService
-  attr_reader :connection, :auth, :output, :location, :breweries, :page
+  attr_reader :connection,
+              :auth,
+              :output,
+              :location,
+              :breweries,
+              :page,
+              :location_search
 
   def initialize
     @connection = Faraday.new("http://api.brewerydb.com")
@@ -8,6 +14,7 @@ class BreweryService
     @location = "withLocations=Y"
     @breweries = []
     @page = 1
+    @location_search = "#{auth}&type=brewery&#{output}&inPlanning=N&isPrimary=Y"
   end
 
   def get_categories
@@ -27,6 +34,11 @@ class BreweryService
   def get_brewery_beers(id)
     beers = parse(connection.get("/v2/brewery/#{id}/beers#{auth}&#{output}"))
     beers[:data]
+  end
+
+  def search_by_city(city)
+    breweries = parse(connection.get("/v2/locations#{auth}&#{location_search}&locality=#{city}"))
+    breweries[:data]
   end
   private
 

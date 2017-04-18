@@ -34,4 +34,27 @@ describe 'brewery' do
       expect(brewery.phone).to eq("704-995-7767")
     end
   end
+
+  it '#search_by_city array of hashes' do
+    VCR.use_cassette('models/brewery/search_by_city') do
+      brewery = Brewery.new
+      breweries = brewery.search_by_city('Denver')
+
+      brewery = breweries.first
+
+      expect(breweries).to be_a(Array)
+      expect(breweries.count).to eq(43)
+      expect(brewery).to be_a(Hash)
+      expect(brewery.has_key?(:id)).to eq(true)
+      expect(brewery.has_key?(:name)).to eq(true)
+      expect(brewery.has_key?(:street)).to eq(true)
+      expect(brewery.has_key?(:city)).to eq(true)
+      expect(brewery.has_key?(:state)).to eq(true)
+      expect(brewery.has_key?(:zip)).to eq(true)
+      expect(brewery.has_key?(:phone)).to eq(true)
+      expect(brewery.has_key?(:website)).to eq(true)
+      expect(brewery.has_key?(:kind)).to eq(true)
+      expect(brewery.has_key?(:image)).to eq(true)
+    end
+  end
 end

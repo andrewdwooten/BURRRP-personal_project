@@ -1,18 +1,19 @@
 <div class='index_banner'>
   <h1>Breweries</h1>
 </div>
-    <div class="row center-cols center-align" id='brewery_list'>
       <% @breweries.each do |brewery| %>
-        <div class="col m5">
-          <div class="card" id='brewery_instance'>
-            <div class="card-image" id='brewery_image'>
-              <a href='/breweries/<%= brewery.id %>'><img src="<%= brewery.image %>"> </a>
-            </div>
-            <div class="card-content" id='brewery_name'>
-              <h5><%= brewery.name %></h5>
-            </div>
-            <div class="card-action">
-              <a href="<%= brewery.website %>" id='brewery_website'>Check out their Website</a>
+        <div class="row center-cols center-align" id='brewery_instance'>
+          <div class="col m7">
+            <div class="card">
+              <div class="card-image" id='brewery_image'>
+                <a href='/breweries/<%= brewery.id %>'><img src="<%= brewery.image %>"> </a>
+              </div>
+              <div class="card-content" id='brewery_name'>
+                <h5><%= brewery.name %></h5>
+              </div>
+              <div class="card-action">
+                <a href="<%= brewery.website %>" id='brewery_website'>Check out their Website</a>
+              </div>
             </div>
           </div>
         </div>
@@ -23,4 +24,3 @@
       <a class="btn-floating btn-large waves-effect waves-light" id='next_page' href='/breweries?brewery_page=<%= (current_page + 1) %>'>
         <i class="material-icons">skip_next</i>
       </a>
-    </div>

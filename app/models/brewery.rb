@@ -35,4 +35,25 @@ class Brewery < OpenStruct
                 phone:        location[:phone],
                 kind:         location[:locationTypeDisplay])
   end
+
+  def search_by_city(city)
+    raw_breweries = tap.search_by_city(city)
+    build_json_breweries(raw_breweries)
+  end
+
+  def build_json_breweries(raw_breweries)
+    raw_breweries.delete_if {|brewery| !brewery[:brewery].has_key?(:images)}
+    raw_breweries.map do |brewery|
+                 {id:           brewery[:brewery][:id],
+                  name:         brewery[:brewery][:name],
+                  street:       brewery[:streetAddress],
+                  city:         brewery[:locality],
+                  state:        brewery[:region],
+                  zip:          brewery[:postalCode],
+                  phone:        brewery[:phone],
+                  website:      brewery[:brewery][:website],
+                  kind:         brewery[:locationTypeDisplay],
+                  image:        brewery[:brewery][:images][:squareMedium]}
+    end
+  end
 end
