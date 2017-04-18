@@ -12,19 +12,22 @@
       </div>
   </div>
   <div class='row' id='contact-row'>
-    <div class='col m5' id='brewery-location-contact'>
-      <div text-align='center'>
-        <%= @brewery.street %></br>
+    <div class='col m12' id='brewery-location-contact'>
+        <%= @brewery.street %>
         <%= @brewery.city %> <%= @brewery.state %>
-        <%= @brewery.phone %></br>
-        <a href='<%= @brewery.website %>'>Visit Brewery Website</a>
-      </div>
+        <%= @brewery.phone %>
+        <a href='<%= @brewery.website %>' class='right'>Visit Brewery Website</a>
     </div>
   </div>
 </div>
+<div class='row center-cols center-align' >
+  <div class='col m7'id='brew_banner'>
+    <h4 align='center'>Brews at this Brewery</h4>
+  </div>
+</div>
 <div class="row center-cols center-align" id='brewery_list'>
+  <div class="col m5">
   <% @brews.each do |brew| %>
-    <div class="col m5">
       <div class="card" id='brew_instance'>
         <div class="card-content" id='brew_name'>
           <span class="card-title"><%= brew.name %></br>Organic: <%= brew.organic? %></span>
@@ -33,6 +36,6 @@
           </p>
         </div>
       </div>
+      <% end %>
     </div>
-  <% end %>
 </div>
