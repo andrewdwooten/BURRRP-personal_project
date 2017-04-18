@@ -11,7 +11,6 @@
 
   #welcome_jumbotron{
     background-color: #740001;
-    color: white;
   }
   #welcome_card{
     background-color: #740001;
@@ -19,7 +18,6 @@
   }
   #navbar{
     background-color: #eeba30;
-    color: black;
   }
   #twitter_login_button{
     background-color: #740001
@@ -97,5 +95,4 @@
   }
   #breweries_link .a{
     background-color: #740001;
-    color: black;
   }
