@@ -1,6 +1,7 @@
 <div class='index_banner white-text'>
   <h1>Breweries</h1>
 </div>
+    <% cache(fingerprint(@breweries.first.name) + current_page.to_s) do %>
       <% @breweries.each do |brewery| %>
         <div class="row center-cols center-align" id='brewery_instance'>
           <div class="col m7">
@@ -18,6 +19,7 @@
           </div>
         </div>
       <% end %>
+    <% end %>
       <a class="btn-floating btn-large waves-effect waves-light" id='previous_page' href='/breweries?brewery_page=<%= (current_page - 1) %>'>
         <i class="material-icons">skip_previous</i>
       </a>

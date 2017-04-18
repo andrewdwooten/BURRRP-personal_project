@@ -17,6 +17,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'figaro'
 gem 'faraday'
 gem 'omniauth-twitter'
+gem 'redis-rails'
 
 group :development, :test do
   gem 'byebug', platform: :mri
