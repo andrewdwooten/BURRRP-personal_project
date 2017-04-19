@@ -11,4 +11,11 @@ class User < ApplicationRecord
                )
     user
   end
+
+  def favorite_breweries_ids
+    breweries = favorite_breweries.select(:uid).to_a
+    breweries.map do |brewery|
+      brewery[:uid]
+    end
+  end
 end
