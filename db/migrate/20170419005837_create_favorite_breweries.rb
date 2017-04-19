@@ -1,0 +1,9 @@
+class CreateFavoriteBreweries < ActiveRecord::Migration[5.0]
+  def change
+    create_table :favorite_breweries do |t|
+      t.string :uid
+
+      t.timestamps
+    end
+  end
+end

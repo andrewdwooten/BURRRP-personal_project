@@ -10,10 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170415001807) do
+ActiveRecord::Schema.define(version: 20170419010005) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "favorite_breweries", force: :cascade do |t|
+    t.string   "uid"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "provider"
@@ -25,4 +31,15 @@ ActiveRecord::Schema.define(version: 20170415001807) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "users_favorite_breweries", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "favorite_brewery_id"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+    t.index ["favorite_brewery_id"], name: "index_users_favorite_breweries_on_favorite_brewery_id", using: :btree
+    t.index ["user_id"], name: "index_users_favorite_breweries_on_user_id", using: :btree
+  end
+
+  add_foreign_key "users_favorite_breweries", "favorite_breweries"
+  add_foreign_key "users_favorite_breweries", "users"
 end
