@@ -9,6 +9,7 @@
       <div class='col m7 white-text' id='brewery_description'>
         <h4><%= @brewery.kind %></h4>
         <p id='brewery_p'><%= @brewery.description %></p>
+                        <a class="waves-effect waves-light btn right white-text" id='favorite_brewery' href='/favorite_breweries/<%= @brewery.id %>' method: 'get'>Add to Favorites</a>
       </div>
   </div>
   <div class='row white-text' id='contact-row'>

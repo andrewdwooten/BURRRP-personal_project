@@ -57,4 +57,19 @@ describe 'brewery' do
       expect(brewery.has_key?(:image)).to eq(true)
     end
   end
+
+  it '#get_user_favorite one hash with appropriate data' do
+    VCR.use_cassette('models/brewery/get_user_favorite') do
+      brewery = Brewery.new
+      favorite = brewery.get_user_favorite('YXDiJk')
+
+      
+      expect(favorite).to be_a(Hash)
+      expect(favorite.keys.count).to eq(4)
+      expect(favorite.has_key?(:id)).to eq(true)
+      expect(favorite.has_key?(:name)).to eq(true)
+      expect(favorite.has_key?(:website)).to eq(true)
+      expect(favorite.has_key?(:image)).to eq(true)
+    end
+  end
 end

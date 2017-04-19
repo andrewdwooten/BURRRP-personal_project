@@ -18,6 +18,7 @@ gem 'figaro'
 gem 'faraday'
 gem 'omniauth-twitter'
 gem 'redis-rails'
+gem 'gon'
 
 group :development, :test do
   gem 'byebug', platform: :mri
