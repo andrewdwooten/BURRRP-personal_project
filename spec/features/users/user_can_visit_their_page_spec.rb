@@ -15,5 +15,6 @@ feature 'user views their page' do
     visit "/users/#{user.id}"
 
     expect(page).to have_content('andreww00ten')
+    expect(page).to have_selector('#user-favorites')
   end
 end
