@@ -3,6 +3,12 @@ require 'rails_helper'
 feature 'user visits a brewery show page' do
   scenario 'user views brewery information' do
     VCR.use_cassette('/features/breweries/show') do
+      user = User.create(name:       'andreww00ten',
+                         uid:        "#{ENV['uid']}",
+                         provider:   "twitter",
+                         token:      "#{ENV['token']}",
+                         secret:     "#{ENV['secret']}")
+      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
 
       visit '/breweries/SWMzJ3'
 

@@ -1,4 +1,5 @@
 class Api::V1::BreweriesSearchController < ApplicationController
+  protect_from_forgery with: :null_session
 
   def index
     brewery = Brewery.new
