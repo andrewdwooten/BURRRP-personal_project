@@ -14,7 +14,7 @@ feature 'user visits root' do
     within('#welcome_cards') do
       expect(page).to have_content('Search your area for local breweries')
       expect(page).to have_content('Browse the collections of artisans')
-      expect(page).to have_content('Make a list of places to go and beverages to try.')
+      expect(page).to have_content('Make a list of places to go.')
     end
 
     expect(page).to have_selector('.page-footer')
