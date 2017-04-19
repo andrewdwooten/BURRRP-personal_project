@@ -21,9 +21,5 @@
         </div>
       <% end %>
     <% end %>
-      <a class="btn-floating btn-large waves-effect waves-light" id='previous_page' href='/breweries?brewery_page=<%= (current_page - 1) %>'>
-        <i class="material-icons">skip_previous</i>
-      </a>
-      <a class="btn-floating btn-large waves-effect waves-light right" id='next_page' href='/breweries?brewery_page=<%= (current_page + 1) %>'>
-        <i class="material-icons">skip_next</i>
-      </a>
+      <a class="btn-floating btn-large waves-effect waves-light" id='previous_page' href='/breweries?brewery_page=<%= (current_page - 1) %>'>Prev</a>
+      <a class="btn-floating btn-large waves-effect waves-light right" id='next_page' href='/breweries?brewery_page=<%= (current_page + 1) %>'>Next</a>
