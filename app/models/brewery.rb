@@ -56,4 +56,12 @@ class Brewery < OpenStruct
                   image:        brewery[:brewery][:images][:squareMedium]}
     end
   end
+
+  def get_user_favorite(id)
+    brewery = tap.get_brewery(id)
+    {id:      brewery[:id],
+     name:    brewery[:name],
+     website: brewery[:website],
+     image:   brewery[:images][:squareMedium]}
+  end
 end
