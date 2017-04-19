@@ -2,6 +2,7 @@ class BreweriesController < ApplicationController
   attr_reader :brewery_place, :brewer
   before_action :set_brewery, only: [:index, :show]
   before_action :set_brew, only: [:show]
+  before_action :authorize!
 
   def index
     if check_page?
