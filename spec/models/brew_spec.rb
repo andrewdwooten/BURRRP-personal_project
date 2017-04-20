@@ -1,9 +1,12 @@
 require 'rails_helper'
 
 describe 'brew' do
+  attr_reader :brew
+  before(:each) do
+    @brew = Brew.new
+  end
   it '#all_at_brewery returns array of brewery objects if service return is not nil' do
     VCR.use_cassette('models/brew/all_at_brewery') do
-      brew = Brew.new
       beers = brew.all_at_brewery('SWMzJ3')
       first = beers.first
 
@@ -16,7 +19,6 @@ describe 'brew' do
   end
   it '#all_at_brewery returns empty array if no beers for brewery' do
     VCR.use_cassette('models/brew/all_at_brewery_sad') do
-      brew = Brew.new
       beers = brew.all_at_brewery('r4JMh7')
 
       expect(beers).to be_a(Array)

@@ -1,9 +1,12 @@
 require 'rails_helper'
 
 describe 'brewery' do
+  attr_reader :brewery
+  before(:each) do
+    @brewery = Brewery.new
+  end
   it '#get_by_page returns 50 brewery objects' do
     VCR.use_cassette('models/brewery/get_by_page') do
-      brewery = Brewery.new
       breweries = brewery.get_by_page(1)
       first = breweries.first
 
@@ -18,8 +21,8 @@ describe 'brewery' do
 
   it '#get_brewery returns 1 brewery object' do
     VCR.use_cassette('models/brewery/get_brewery') do
-      brewery = Brewery.new
-      brewery = brewery.get_brewery('SWMzJ3')
+      
+      brewery = @brewery.get_brewery('SWMzJ3')
 
       expect(brewery.class).to eq(Brewery)
       expect(brewery.id).to eq('SWMzJ3')
@@ -37,7 +40,6 @@ describe 'brewery' do
 
   it '#search_by_city array of hashes' do
     VCR.use_cassette('models/brewery/search_by_city') do
-      brewery = Brewery.new
       breweries = brewery.search_by_city('Denver')
 
       brewery = breweries.first
@@ -60,10 +62,9 @@ describe 'brewery' do
 
   it '#get_user_favorite one hash with appropriate data' do
     VCR.use_cassette('models/brewery/get_user_favorite') do
-      brewery = Brewery.new
       favorite = brewery.get_user_favorite('YXDiJk')
 
-      
+
       expect(favorite).to be_a(Hash)
       expect(favorite.keys.count).to eq(4)
       expect(favorite.has_key?(:id)).to eq(true)
