@@ -10,6 +10,12 @@ require 'capybara/rspec'
 require 'webmock/rspec'
 require 'vcr'
 
+Shoulda::Matchers.configure do |config|
+  config.integrate do |with|
+    with.test_framework :rspec
+    with.library :rails
+  end
+end
 VCR.configure do |config|
   config.cassette_library_dir = "spec/cassettes"
   config.hook_into :webmock

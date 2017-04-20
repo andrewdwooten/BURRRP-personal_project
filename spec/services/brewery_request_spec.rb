@@ -1,9 +1,12 @@
 require 'rails_helper'
 
 describe 'brewery service' do
+  attr_reader :tap
+  before(:each) do
+    @tap = BreweryService.new
+  end
   it '#get_brewery returns a single brewery by id' do
     VCR.use_cassette('services/breweries/brewery_request') do
-      tap = BreweryService.new
       brewery = tap.get_brewery("SWMzJ3")
 
       expect(brewery[:name]).to eq("Ass Clown Brewing Company")
@@ -15,7 +18,6 @@ describe 'brewery service' do
 
   it '#get_brewery_beers returns a brewery by id' do
     VCR.use_cassette('services/breweries/brewery_beers') do
-      tap = BreweryService.new
       beers = tap.get_brewery_beers("SWMzJ3")
       beer = beers.first
 
